@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Lms.Data.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<LmsAPIContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LmsAPIContext") ?? throw new InvalidOperationException("Connection string 'LmsAPIContext' not found.")));
 
 // Add services to the container.
 

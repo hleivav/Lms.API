@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lms.Core.Entities
 {
 #nullable disable
-    internal class Course
+    public class Course
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty; 
